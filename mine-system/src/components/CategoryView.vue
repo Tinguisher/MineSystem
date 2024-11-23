@@ -48,7 +48,11 @@
 
             <div class="form-actions">
               <button type="submit" class="confirm-button">Confirm</button>
-              <button type="button" class="cancel-button" @click="closeModal">
+              <button
+                type="button"
+                class="cancel-button"
+                @click="showPopup = false"
+              >
                 Cancel
               </button>
             </div>

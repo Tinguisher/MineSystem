@@ -8,17 +8,68 @@ import OrderPage from "../components/OrderPage.vue";
 import LiveSession from "../components/LiveSession.vue";
 import CategoryView from "../components/CategoryView.vue";
 import ProductView from "../components/ProductView.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 const routes = [
-  { path: "/", component: LoginForm },
-  { path: "/landingpage", component: LandingPage },
-  { path: "/dashboard", component: DashBoard, name: "home" },
-  { path: "/inventory", component: InventoryPage, name: "inventory" },
-  { path: "/customers", component: CustomerPage, name: "customers" },
-  { path: "/orders", component: OrderPage, name: "orders" },
-  { path: "/live-sessions", component: LiveSession, name: "liveSessions" },
-  { path: "/category-view", component: CategoryView, name: "categoryView" },
-  { path: "/product-view", component: ProductView, name: "productView" },
+  {
+    path: "/",
+    component: LoginForm,
+  },
+  {
+    path: "/landingpage",
+    component: LandingPage,
+    children: [
+      {
+        path: "",
+        components: {
+          default: DashBoard,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "inventory",
+        components: {
+          default: InventoryPage,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "customers",
+        components: {
+          default: CustomerPage,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "orders",
+        components: {
+          default: OrderPage,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "live-sessions",
+        components: {
+          default: LiveSession,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "category-view",
+        components: {
+          default: CategoryView,
+          navigation: NavigationBar,
+        },
+      },
+      {
+        path: "product-view",
+        components: {
+          default: ProductView,
+          navigation: NavigationBar,
+        },
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

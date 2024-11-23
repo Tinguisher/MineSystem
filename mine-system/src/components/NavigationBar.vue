@@ -14,57 +14,69 @@
           @mouseleave="isHovered = false"
         >
           <ul>
-            <li
-              :class="{ active: isActive === 'DashBoard' }"
-              @click="setActive('DashBoard')"
-            >
-              <div class="icon-container">
-                <PhHouse :size="20" :color="getIconColor('DashBoard')" />
-              </div>
-              <span>Home</span>
-            </li>
-            <li
-              :class="{ active: isActive === 'InventoryPage' }"
-              @click="setActive('InventoryPage')"
-            >
-              <div class="icon-container">
-                <PhTreasureChest
-                  :size="20"
-                  :color="getIconColor('InventoryPage')"
-                />
-              </div>
-              <span>Inventory</span>
-            </li>
-            <li
-              :class="{ active: isActive === 'CustomerPage' }"
-              @click="setActive('CustomerPage')"
-            >
-              <div class="icon-container">
-                <PhUser :size="20" :color="getIconColor('CustomerPage')" />
-              </div>
-              <span>Customers</span>
-            </li>
-            <li
-              :class="{ active: isActive === 'OrderPage' }"
-              @click="setActive('OrderPage')"
-            >
-              <div class="icon-container">
-                <PhClipboardText
-                  :size="20"
-                  :color="getIconColor('OrderPage')"
-                />
-              </div>
-              <span>Orders</span>
-            </li>
-            <li
-              :class="{ active: isActive === 'LiveSession' }"
-              @click="setActive('LiveSession')"
-            >
-              <div class="icon-container">
-                <PhBroadcast :size="20" :color="getIconColor('LiveSession')" />
-              </div>
-              <span>Live Sessions</span>
-            </li>
+            <router-link to="/landingpage">
+              <li
+                :class="{ active: isActive === 'DashBoard' }"
+                @click="setActive('DashBoard')"
+              >
+                <div class="icon-container">
+                  <PhHouse :size="20" :color="getIconColor('DashBoard')" />
+                </div>
+                <span>Home</span>
+              </li>
+            </router-link>
+            <router-link to="/landingpage/inventory">
+              <li
+                :class="{ active: isActive === 'InventoryPage' }"
+                @click="setActive('InventoryPage')"
+              >
+                <div class="icon-container">
+                  <PhTreasureChest
+                    :size="20"
+                    :color="getIconColor('InventoryPage')"
+                  />
+                </div>
+                <span>Inventory</span>
+              </li>
+            </router-link>
+            <router-link to="/landingpage/customers">
+              <li
+                :class="{ active: isActive === 'CustomerPage' }"
+                @click="setActive('CustomerPage')"
+              >
+                <div class="icon-container">
+                  <PhUser :size="20" :color="getIconColor('CustomerPage')" />
+                </div>
+                <span>Customers</span>
+              </li>
+            </router-link>
+            <router-link to="/landingpage/orders">
+              <li
+                :class="{ active: isActive === 'OrderPage' }"
+                @click="setActive('OrderPage')"
+              >
+                <div class="icon-container">
+                  <PhClipboardText
+                    :size="20"
+                    :color="getIconColor('OrderPage')"
+                  />
+                </div>
+                <span>Orders</span>
+              </li> </router-link
+            ><router-link to="/landingpage/live-sessions">
+              <li
+                :class="{ active: isActive === 'LiveSession' }"
+                @click="setActive('LiveSession')"
+              >
+                <div class="icon-container">
+                  <PhBroadcast
+                    :size="20"
+                    :color="getIconColor('LiveSession')"
+                  />
+                </div>
+                <span>Live Sessions</span>
+              </li>
+            </router-link>
           </ul>
         </nav>
       </div>
