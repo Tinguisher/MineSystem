@@ -62,8 +62,9 @@
                   />
                 </div>
                 <span>Orders</span>
-              </li> </router-link
-            ><router-link to="/landingpage/live-sessions">
+              </li>
+            </router-link>
+            <router-link to="/landingpage/live-sessions">
               <li
                 :class="{ active: isActive === 'LiveSession' }"
                 @click="setActive('LiveSession')"
@@ -126,16 +127,9 @@ export default {
   },
   data() {
     return {
-      isActive: "DashBoard",
+      isActive: "", // Keep track of the active menu item
       imageSrc: require("@/assets/logo-small.png"),
       sidebarExpanded: false,
-      components: [
-        "DashBoard",
-        "InventoryPage",
-        "CustomerPage",
-        "OrderPage",
-        "LiveSession",
-      ],
     };
   },
   methods: {
@@ -152,6 +146,27 @@ export default {
     },
     getIconColor(menuItem) {
       return this.isActive === menuItem ? "#ffffff" : "#000000"; // White if active, black if inactive
+    },
+    setActiveFromPath() {
+      const pathToMenuItemMap = {
+        "/landingpage": "DashBoard",
+        "/landingpage/inventory": "InventoryPage",
+        "/landingpage/customers": "CustomerPage",
+        "/landingpage/orders": "OrderPage",
+        "/landingpage/live-sessions": "LiveSession",
+      };
+
+      this.isActive = pathToMenuItemMap[this.$route.path] || "DashBoard";
+    },
+  },
+  created() {
+    // Set the active menu item based on the current route
+    this.setActiveFromPath();
+  },
+  watch: {
+    $route() {
+      // Update active menu when route changes dynamically
+      this.setActiveFromPath();
     },
   },
 };
@@ -207,14 +222,10 @@ export default {
   transition: background-color 0.3s;
 }
 
-.nav-menu li span {
-  margin-left: 5%;
-  color: #000000;
-}
-
 .nav-menu li.active span,
 .nav-menu li.active .icon-container {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .nav-menu li.active,
@@ -231,6 +242,9 @@ export default {
   display: none;
   visibility: hidden;
   opacity: 0;
+  text-decoration: none;
+  margin-left: 5%;
+  color: #000000;
 }
 
 .sidebar-expanded {

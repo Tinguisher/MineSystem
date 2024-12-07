@@ -69,3 +69,21 @@ div {
   margin-left: 15px;
   border-radius: 25px;
 }
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f1b100;
+  border-radius: 10px;
+}

@@ -97,7 +97,9 @@
                         <button class="view-button">View</button>
                       </div>
                     </div>
-                    <div class="view">View Details</div>
+                    <router-link to="/landingpage/live-sessions">
+                      <div class="view">View Details</div>
+                    </router-link>
                   </div>
                 </div>
                 <div class="flex-column space-between" style="width: 34%">
@@ -132,7 +134,9 @@
                       >
                         <div class="top-list">Last Name, First Name</div>
                       </div>
-                      <div class="view">View Details</div>
+                      <router-link to="/landingpage/customers">
+                        <div class="view">View Details</div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -160,7 +164,9 @@
                   </div>
                   <div class="ship-text">Total Products<br />for Shipment</div>
                 </div>
-                <div class="view">View Details</div>
+                <router-link to="/landingpage/orders">
+                  <div class="view">View Details</div>
+                </router-link>
               </div>
             </div>
             <div class="flex-column" style="height: 63.5%">
@@ -196,7 +202,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="view">View Details</div>
+                <router-link to="/landingpage/inventory"
+                  ><div class="view">View Details</div>
+                </router-link>
               </div>
             </div>
           </div>
@@ -622,20 +630,6 @@ button.active {
   border-radius: 8px;
   background: #b1b1b1;
   margin-bottom: 3%;
-}
-
-.notif::-webkit-scrollbar {
-  width: 10px;
-}
-
-.notif::-webkit-scrollbar-track {
-  background: #e1e1e1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f1b100;
-  border-radius: 10px;
 }
 
 .icon-container {
