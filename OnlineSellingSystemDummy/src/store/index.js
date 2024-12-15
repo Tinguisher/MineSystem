@@ -4,27 +4,47 @@ import axiosClient from "../axios";
 const tmpProducts = [
     {
         id: 1,
-        title: "Product1",
+        image: "../assets/vue.svg",
+        code: "001",
+        name: "Product1",
+        stock: 500,
+        price: 10,
         description: "hehe"
     },
     {
         id: 2,
-        title: "2",
+        image: "../assets/vue.svg",
+        code: "002",
+        name: "2",
+        stock: 100,
+        price: 20,
         description: "heheaa"
     },
     {
         id: 3,
-        title: "Prodc3",
+        image: "../assets/vue.svg",
+        code: "003",
+        name: "Prodc3",
+        stock: 300,
+        price: 30,
         description: "hehess"
     },
     {
         id: 4,
-        title: "pr4",
+        image: "../assets/vue.svg",
+        code: "004",
+        name: "pr4",
+        stock: 5000,
+        price: 15,
         description: "hehedd"
     },
     {
         id: 5,
-        title: "Br5",
+        image: "../assets/vue.svg",
+        code: "005",
+        name: "Br5",
+        stock: 5002,
+        price: 70,
         description: "heheff"
     }
 ]

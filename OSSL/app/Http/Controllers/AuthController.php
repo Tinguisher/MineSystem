@@ -35,6 +35,7 @@ class AuthController extends Controller
     }
 
     public function login(LoginRequest $request){
+        // check if the inputs are required etc
         $credentials = $request -> validated();
 
         // if the the credentials did not passed, send error message and status code 422

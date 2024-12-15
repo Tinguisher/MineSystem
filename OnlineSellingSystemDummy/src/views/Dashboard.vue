@@ -1,12 +1,15 @@
 <template>
     <h4>This is content of dashboard</h4>
+    <router-link :to="{ name: 'Products' }">Go to check your products</router-link>
 </template>
 
 <script setup>
+import store from "../store";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-import {useRouter} from "vue-router";
+const router = useRouter();
 
-// export default {
-//     name: "Dashboard"
-// }
+
+
 </script>

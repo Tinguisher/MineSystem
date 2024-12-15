@@ -8,15 +8,15 @@
         <input type="checkbox" v-model="user.remember">
         <br>
         <button type="submit">Sign in</button>
-        {{errorMsg}}
+        {{ errorMsg }}
     </form>
-    
-    <router-link :to="{name: 'Register'}">Register a new Account</router-link>
+
+    <router-link :to="{ name: 'Register' }">Register a new Account</router-link>
 </template>
 
 <script setup>
 import store from '../store';
-import {useRouter} from "vue-router";
+import { useRouter } from "vue-router";
 import { ref } from 'vue';
 
 const router = useRouter();
@@ -33,7 +33,7 @@ function login(ev) {
     ev.preventDefault();
 
     store.dispatch('login', user)
-        .then( () => {
+        .then(() => {
             // redirect to dashboard if success
             router.push({
                 name: 'Dashboard'

@@ -3,7 +3,9 @@
 
     <div>
         <div v-for="product in products" :key="product.id">
-            <h4>Title: {{ product.title }}</h4>
+            <h4>Title: {{ product.name }}</h4>
+
+            <router-link :to="{ name: 'ProductView', params: { id: product.id }}"> CHECK THE PRODUCT {{ product.id }} </router-link>
         </div>
     </div>
 </template>
@@ -12,5 +14,6 @@
 import store from '../store';
 import { computed } from 'vue';
 
+// get the products from the store/index.js
 const products = computed(() => store.state.products);
 </script>
